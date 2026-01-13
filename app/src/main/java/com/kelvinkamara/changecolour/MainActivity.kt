@@ -12,6 +12,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class MainActivity : AppCompatActivity() {
     private lateinit var view: View
     private lateinit var button: FloatingActionButton
+    private val colours = arrayOf(
+        Color.RED, Color.WHITE, Color.GRAY, Color.GREEN, Color.MAGENTA, Color.BLACK, Color.YELLOW, Color.BLUE
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +30,8 @@ class MainActivity : AppCompatActivity() {
         button = findViewById(R.id.button_change)
 
         button.setOnClickListener {
-            view.setBackgroundColor(Color.RED)
+            // view.setBackgroundColor(colours[Random.nextInt(colors.size)]) // Course implementation.
+            view.setBackgroundColor(colours[(colours.indices).random()]) // AI implementation.
         }
     }
 }
